@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<title>Dev Portfolio</title>
+	
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="./assets/favicon.png">
+	<link rel="shortcut icon" href="./assets/favicon.png">
+	<link rel="apple-touch-icon" href="./assets/favicon.png">
+	
+	<!-- External Dependencies -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<!-- Loader -->
+	<div class="loader" id="loader">
+		<div class="loader-content">
+			<div class="loader-logo"><img src="./assets/favicon.png" alt="Logo"></div>
+		</div>
+	</div>
+
+	<!-- Sound Control Button -->
+	<div class="sound-control" id="soundControl">
+		<div class="sound-icon">
+			<div class="sound-bars">
+				<div class="sound-bar"></div>
+				<div class="sound-bar"></div>
+				<div class="sound-bar"></div>
+				<div class="sound-bar"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Music Notification -->
+	<div class="music-notification" id="musicNotification">
+		<div class="notification-content">
+			<div class="notification-avatar"><img src="./assets/mew-headphones.png" alt="Music Assistant"></div>
+			<div class="notification-text-content">
+				<p class="notification-title">Sound On?</p>
+				<p class="notification-text">A little music makes scrolling better. Click to play.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Fullscreen Video Overlay -->
+	<div class="fullscreen-overlay" id="fullscreenOverlay">
+		<div class="fullscreen-video-container">
+			<video class="fullscreen-video" id="fullscreenVideo" playsinline webkit-playsinline></video>
+			
+			<!-- Custom Video Controls -->
+			<div class="custom-video-controls" id="customVideoControls">
+				<!-- Top controls -->
+				<div class="video-header">
+					<button class="video-back-btn" title="Back">
+						<i class="fas fa-arrow-left"></i>
+					</button>
+					<div class="video-title">Project Demo</div>
+				</div>
+				
+				<!-- Center play/pause -->
+				<div class="video-center-controls">
+					<button class="center-play-btn" id="centerPlayBtn">
+						<i class="fas fa-play"></i>
+					</button>
+				</div>
+				
+				<!-- Bottom controls -->
+				<div class="video-bottom-controls">
+					<div class="video-progress-container">
+						<div class="video-progress-track" id="progressTrack">
+							<div class="video-progress-buffer"></div>
+							<div class="video-progress-played" id="progressPlayed"></div>
+							<div class="video-progress-handle" id="progressHandle"></div>
+						</div>
+					</div>
+					
+					<div class="video-control-row">
+						<div class="video-time">
+							<span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+						</div>
+						
+						<div class="video-actions">
+							<button class="video-action-btn restart-btn" title="Restart">
+								<i class="fas fa-redo"></i>
+							</button>
+							<button class="video-action-btn speed-btn" title="Speed" id="speedBtn">
+								1x
+							</button>
+							<button class="video-action-btn mute-btn" title="Mute/Unmute" id="muteBtn">
+								<i class="fas fa-volume-up"></i>
+							</button>
+							<button class="video-action-btn fullscreen-exit-btn" title="Exit">
+								<i class="fas fa-compress"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation -->
+	<nav id="navbar">
+		<div class="nav-container">
+			<div class="logo"><img src="./assets/favicon.png" alt="Logo"></div>
+			<ul class="nav-links">
+				<li><a href="#home"><i class="fas fa-home"></i><span class="nav-text">Home</span></a></li>
+				<li><a href="#about"><i class="fas fa-user"></i><span class="nav-text">About</span></a></li>
+				<li><a href="#experience"><i class="fas fa-briefcase"></i><span class="nav-text">Experience</span></a></li>
+				<li><a href="#projects"><i class="fas fa-code"></i><span class="nav-text">Projects</span></a></li>
+				<li><a href="#contact"><i class="fas fa-envelope"></i><span class="nav-text">Contact</span></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section class="hero" id="home">
+		<div id="mew-wrapper">
+			<img id="mew-floater" src="https://img.pokemondb.net/sprites/black-white/anim/normal/mew.gif" />
+		</div>
+		<div class="hero-animated-bg">
+			<div class="gradient-orb orb-1"></div>
+			<div class="gradient-orb orb-2"></div>
+			<div class="gradient-orb orb-3"></div>
+		</div>
+		<div class="particles" id="particles"></div>
+		<div class="hero-bg"></div>
+		<div class="hero-content">
+			<h1 data-text="Muhammad Ahmed">Muhammad Ahmed</h1>
+			<p class="subtitle">
+				<span class="mu-options">
+					<span>Software Engineer</span>
+				</span>
+			</p>
+			<p class="fun-intro">
+				Software engineer by hobby. Love to build things, sometimes games, sometimes apps, always something that means something.
+			</p>
+			<div class="hero-buttons">
+				<a href="#projects" class="btn btn-primary">View Projects</a>
+				<a href="https://github.com/mahmedmo" target="_blank" class="btn btn-secondary">
+					<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+					</svg>
+					GitHub
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="about" id="about">
+		<div class="container">
+			<h2 class="section-title fade-in">About <span>Me</span></h2>
+			<div class="about-content fade-in">
+				<div class="about-image">
+					<div class="profile-container">
+						<img src="./assets/about-me.jpg" alt="" class="profile-image" />
+					</div>
+				</div>
+				<div class="about-text">
+					<p>
+						I'm a passionate Software Engineering student at the
+						University of Calgary with a unique blend of
+						technical expertise and creative problem-solving.
+						From teaching 150+ young minds the magic of coding
+						to architecting enterprise-level software solutions,
+						I thrive on challenges that push the boundaries of
+						what's possible.
+					</p>
+					<p>
+						My journey spans full-stack development, machine
+						learning, and game development, with a special
+						interest in creating intuitive, user-centered
+						experiences. Whether it's building AI-powered
+						educational games or developing geospatial
+						healthcare solutions, I'm driven by the impact
+						technology can have on people's lives.
+					</p>
+					<div class="skills-grid">
+						<div class="skill-category">
+							<h3>Languages</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">C++</span>
+								<span class="skill-tag">C#</span>
+								<span class="skill-tag">C</span>
+								<span class="skill-tag">Python</span>
+								<span class="skill-tag">Java</span>
+								<span class="skill-tag">JavaScript</span>
+								<span class="skill-tag">TypeScript</span>
+								<span class="skill-tag">Dart</span>
+								<span class="skill-tag">SQL</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Frameworks</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">Qt</span>
+								<span class="skill-tag">Unity</span>
+								<span class="skill-tag">Spring Boot</span>
+								<span class="skill-tag">Flask</span>
+								<span class="skill-tag">React</span>
+								<span class="skill-tag">Angular</span>
+								<span class="skill-tag">Flutter</span>
+								<span class="skill-tag">Express.js</span>
+								<span class="skill-tag">Next.js</span>
+								<span class="skill-tag">Node.js</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Tools & Platforms</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">Git</span>
+								<span class="skill-tag">Docker</span>
+								<span class="skill-tag">Firebase</span>
+								<span class="skill-tag">PostgreSQL</span>
+								<span class="skill-tag">MySQL</span>
+								<span class="skill-tag">Redis</span>
+								<span class="skill-tag">Render</span>
+								<span class="skill-tag">Vercel</span>
+								<span class="skill-tag">Azure</span>
+								<span class="skill-tag">Atlassian Crucible</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Experience Section -->
+	<section class="experience" id="experience">
+		<div class="section-separator"></div>
+		<div class="container">
+			<h2 class="section-title fade-in">My <span>Experience</span></h2>
+			<div class="timeline">
+				<!-- Future: Graduation -->
+				<div class="timeline-item">
+					<div class="timeline-dot graduation-dot">
+						<span class="timeline-label">FUTURE</span>
+					</div>
+					<div class="timeline-content">
+						<div class="timeline-date">
+							April 2027
+						</div>
+						<h3>🎓 Graduation</h3>
+						<h4>Bachelor's Degree Expected</h4>
+						<p>
+							Completing my undergraduate studies in Software Engineering at the University of Calgary, exciting!
+						</p>
+					</div>
+				</div>
+
+				<!-- Present/Current: SeisWare Co-op -->
+				<div class="timeline-item">
+					<div class="timeline-dot current-dot">
+						<span class="timeline-label">PRESENT</span>
+					</div>
+					<div class="timeline-content">
+						<div class="timeline-date">
+							May 2025 - December 2025
+						</div>
+						<h3>Co-op Software Developer</h3>
+						<h4>SeisWare International / Computer Modelling Group</h4>
+						<p>
+							Taking ownership of enterprise software projects from prototype to production, implementing critical features like transfer owner privileges for vast data objects in C++/C#/Qt. Leading technical architecture and design decisions for data filtering systems and collaborating cross-functionally in agile sprints using Git and Azure DevOps.
+						</p>
+					</div>
+				</div>
+
+				<!-- Past: Stratus Neuro -->
+				<div class="timeline-item">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-date">
+							September 2023 - November 2024
+						</div>
+						<h3>Full-Stack Developer</h3>
+						<h4>Stratus Neuro</h4>
+						<p>
+							Built a web-based geographical data management system with Angular and Leaflet.js, enabling creation, editing, and analysis of custom map data. Implemented GeoJSON-based persistence for saving/importing geospatial features, improving data-driven decision-making for clients across Canada and the US.
+						</p>
+					</div>
+				</div>
+
+				<!-- Past: Code Ninjas -->
+				<div class="timeline-item">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-date">
+							June 2022 - Present
+						</div>
+						<h3>Senior Coding Instructor</h3>
+						<h4>Code Ninjas</h4>
+						<p>
+							Advanced 150+ students (ages 7–14) from block-based coding to JavaScript, achieving strong retention and skill progression. Taught technical Unity C# classes covering design patterns, algorithms, and data structures, elevating project quality and contributing to increased course enrollment.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Section -->
+	<section class="projects" id="projects">
+		<div class="section-separator"></div>
+		<div class="container">
+			<h2 class="section-title fade-in">
+				Featured <span>Projects</span>
+			</h2>
+			<div class="projects-container">
+				<div class="projects-grid" id="projectsGrid">
+					<!-- Projects will be dynamically generated from config/projects.js -->
+				</div>
+				<button class="view-more-btn" id="viewMoreBtn">
+					<span>View More</span>
+					<svg class="arrow-icon" id="viewMoreIcon" viewBox="0 0 24 24">
+						<path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+					</svg>
+				</button>
+				<!-- Mobile Projects Carousel -->
+				<div class="mobile-projects">
+					<div class="mobile-project-viewport">
+						<div class="mobile-projects-track" id="mobileProjectsTrack">
+							<!-- Projects will be cloned here via JavaScript -->
+						</div>
+					</div>
+					<!-- Mobile Indicators -->
+					<div class="mobile-project-indicators" id="mobileIndicators">
+						<!-- Indicators will be generated via JavaScript -->
+					</div>
+					<!-- Swipe Indicator -->
+					<div class="swipe-indicator" id="swipeIndicator">
+						<span class="swipe-text">Swipe</span>
+						<div class="swipe-hand">
+							<span class="hand-icon">👆</span>
+						</div>
+					</div>
+				</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section class="contact" id="contact">
+		<div class="section-separator"></div>
+		<div class="container">
+			<h2 class="section-title fade-in">
+				Let's <span>Connect</span>
+			</h2>
+			<div class="contact-content fade-in">
+				<p class="contact-message">
+					I'm always excited to collaborate on innovative projects
+					and explore new opportunities. Whether you have a
+					question, an idea, or just want to say hello, I'd love
+					to hear from you!
+				</p>
+				<div class="contact-info">
+					<a href="https://www.linkedin.com/in/muhammad-ahmed8/" class="contact-item" target="_blank">
+						<i class="fab fa-linkedin"></i>
+						<span>LinkedIn</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Floating Menu -->
+	<nav class="floating-menu" id="floatingMenu">
+		<a href="#home" class="menu-item active" data-section="home">
+			<i class="fas fa-home"></i>
+			<span>Home</span>
+		</a>
+		<a href="#about" class="menu-item" data-section="about">
+			<i class="fas fa-user"></i>
+			<span>About</span>
+		</a>
+		<a href="#experience" class="menu-item" data-section="experience">
+			<i class="fas fa-briefcase"></i>
+			<span>Experience</span>
+		</a>
+		<a href="#projects" class="menu-item" data-section="projects">
+			<i class="fas fa-code"></i>
+			<span>Projects</span>
+		</a>
+		<a href="#contact" class="menu-item" data-section="contact">
+			<i class="fas fa-envelope"></i>
+			<span>Contact</span>
+		</a>
+	</nav>
+
+	<!-- Unique Footer -->
+	<footer class="unique-footer">
+		<div class="footer-particles">
+			<div class="particle-1"></div>
+			<div class="particle-2"></div>
+			<div class="particle-3"></div>
+			<div class="particle-4"></div>
+			<div class="particle-5"></div>
+		</div>
+		<div class="footer-content">
+			<div class="footer-separator"></div>
+			<button class="return-to-top" id="returnToTop" title="Return to Top">
+				<div class="rocket-icon">
+					<i class="fas fa-rocket"></i>
+				</div>
+				<span class="return-text">Launch to Top</span>
+			</button>
+			<div class="footer-message">
+				<span class="typing-text">Fun fact: I like Pokémon ٩(◕‿◕)۶</span>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Main Application Script -->
+	<script type="module" src="./js/main.js"></script>
+</body>
+</html>
